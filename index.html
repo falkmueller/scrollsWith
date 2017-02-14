@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jQuery scrollsWith</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+        .sidebar {
+            padding: 10px;
+            background-color: #70B7FD;
+            color: #fff;
+        }
+    </style>
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+        <div class="jumbotron">
+            <div class="container">   
+                <h1>jQuery scrollsWith plugin</h1>
+                <p>
+                    jQuery Sticky Sidebar Plugin
+                </p>
+            </div>
+        </div> 
+      
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-4 col-md-3 hidden-xs">
+                  <div data-sidebar-dummy="sidebar1"></div>
+                  <div>
+                      <div class="sidebar" id="sidebar1">
+                        This is a sidebar!<br/>
+                        by Scolling, it scolls with.
+                         <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation"><a href="#usage">usage</a></li>
+                        <li role="presentation"><a href="#options">options</a></li>
+                      </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-8 col-md-9">
+                  <div id="usage">
+                    <h2>Usage</h2>
+                        1. insert sidebar and a invisible dummy-element<br/>
+                        <code>
+                            &lt;div data-sidebar-dummy="sidebar1" &gt;&lt;/div&gt<br/>
+                            &lt;div id="sidebar1" &gt;...&lt;/div&gt
+                        </code><br/><br/>
+
+                        2. insert a invisible bottom-dummy-element on the place where scoll position ends<br/>
+                        <code>
+                            CONTENT...<br/>
+                            &lt;div data-sidebar-bottom="sidebar1" &gt;&lt;/div&gt<br/>
+                        </code><br/><br/>
+
+                        3. add jQuery an the suggest plugin<br/>
+                        <code>
+                           &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&g<br/>
+                           &lt;script src="js/scrollsWith.js"&gt;&lt;/script&gt;
+                        </code><br/><br/>
+
+                       4.init sidebar
+                        <code>
+                            $("#sidebar1").scrollsWith();
+                            //or<br/>
+                            $("#sidebar1").scrollsWith({margin_top: 30, fixedClass: 'is-fixed'});
+                        </code>
+                   </div>
+                   
+                   <div id="options">
+                       <h2>options</h2>
+                         <p>
+                             options can be set by the "option" function or by initialization.
+                         </p>
+
+                         <table class="table">
+                             <tr>
+                                 <td>
+                                     dummy_attr
+                                 </td>
+                                 <td>
+                                     (default: 'data-sidebar-dummy') The attrebut-name with identify the dummy element
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     bottom_dummy_attr
+                                 </td>
+                                 <td>
+                                     (default: 'data-sidebar-bottom'). The attrebut-name with identify the dummy element with defined the end of the scolling area.
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     attr_value
+                                 </td>
+                                 <td>
+                                     (default: null) the value of the dummy attrebutes. is null, then htey use the id of the element.
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     margin_top
+                                 </td>
+                                 <td>
+                                     (default: 0) space top of the scoll-element.
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     fixedClass
+                                 </td>
+                                 <td>
+                                     (default: 'fixed') Css class, thex will be added to the element if they static. The class is optional und will dont use by the scollWith Plugin to set the position of the element.
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     minWidth
+                                 </td>
+                                 <td>
+                                     (default: 200) The minimal Browser with to enable fixing elements
+                                 </td>
+                             </tr>
+                         </table>
+                   </div>                  
+
+                   <div data-sidebar-bottom="sidebar1"></div>
+              </div>
+          </div>
+      </div>
+      <div style="height: 30px;"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-6 col-sm-8 col-md-9">
+                  
+                  <div id="text1">
+                      <h2>Example Text 1</h2>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+                   </div>
+                  
+                  <div id="text2">
+                    <h2>Example Text 2</h2>
+                    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
+                  </div>
+                  <div id="text3">
+                      <h2>Example Text 3</h2>
+                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   
+
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+
+                    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+                    </div>
+                  <div data-sidebar-bottom="sidebar2"></div>
+              </div>
+              <div class="col-xs-6 col-sm-4 col-md-3">
+                  <div data-sidebar-dummy="sidebar2"></div>
+                  <div id="sidebar2" >
+                      <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation"><a href="#text1">Example Text 1</a></li>
+                        <li role="presentation"><a href="#text2">Example Text 2</a></li>
+                        <li role="presentation"><a href="#text3">Example Text 3</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="scrollsWith.js"></script>
+
+    <script type="text/javascript">
+        $("#sidebar1").scrollsWith({
+            margin_top: 30
+        });
+        
+        $("#sidebar2").scrollsWith({
+            margin_top: 30
+        });
+    </script>
+    
+    <script type="text/javascript">
+        /*SMOOTH SCROLL*/
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html, body').animate({
+                    scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+                }
+              }
+            });
+      });
+      
+      /*Anchor active*/
+      $(window).on("scroll", function(){
+            var scrollTop = $( window ).scrollTop();
+            $('#sidebar1 a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement && refElement.offset().top <= scrollTop && refElement.offset().top + refElement.height() > scrollTop) {
+                    $('#sidebar1 li').removeClass("active");
+                    currLink.parent("li").addClass("active");
+                }
+                else{
+                    currLink.parent("li").removeClass("active");
+                }
+            });  
+            
+            $('#sidebar2 a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement && refElement.offset().top <= scrollTop && refElement.offset().top + refElement.height() > scrollTop) {
+                    $('#sidebar2 li').removeClass("active");
+                    currLink.parent("li").addClass("active");
+                }
+                else{
+                    currLink.parent("li").removeClass("active");
+                }
+            });  
+      })
+
+    </script>
+    
+    <a href="https://github.com/falkmueller/scrollsWith" target="_blank" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+  </body>
+</html>
