@@ -7,6 +7,6 @@ jQuery scrollsWith plugin
 [![Website](https://img.shields.io/website-falk-falk/http/falk-m.de.svg)](https://falk-m.de)
 
 jQuery Sticky Sidebar Plugin
-[Documentation](http://code.falk-m.de/scrollsWith/).
+[Documentation and Demo](http://code.falk-m.de/scrollsWith/).
 
 ![Screnshot](screenshot.jpg)
